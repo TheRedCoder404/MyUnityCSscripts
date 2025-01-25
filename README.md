@@ -3,17 +3,17 @@
 
 <details open>
   <summary>Better Fly Killing Game</summary>
-  <p>This is a game in which the goal is to smash as many flies as possible while being careful not to hit the bumblebees <br> <a href="https://theredcoder404.itch.io/better-fly-whacking-game">Itch.io site</a></p>
+  <p>This is a game in which the goal is to smash as many flies as possible while being careful not to hit the bumblebees. <br> <a href="https://theredcoder404.itch.io/better-fly-whacking-game">Itch.io site</a></p>
 </details>
 
 <details>
   <summary>FlappyBird</summary>
-  <p>This is my own little Flappy birds clone. It is currently not finished.</p>
+  <p>This is my own little Flappy birds clone.</p>
 </details>
 
 <details>
   <summary>Snake</summary>
-  <p>This is my own little Snake clone. It has a simple look but is finished</p>
+  <p>This is my own little Snake clone. It has a simple look but is finished.</p>
 </details>
 
 <details>
