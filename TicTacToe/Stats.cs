@@ -1,10 +1,17 @@
 using System;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Stats : MonoBehaviour
 {
     public static Stats Instance;
+
+    [SerializeField] public GameObject[] WinLines;
+    [SerializeField] public GameObject WinP1Text;
+    [SerializeField] public GameObject WinP2Text;
+    [SerializeField] public GameObject Buttons;
+
     public bool playerTurn = false;
     public bool isPlayable;
 
@@ -45,7 +52,7 @@ public class Stats : MonoBehaviour
                     {
                         if (pressedByP2.Contains(winCons[i, j]) && j == 2)
                         {
-                            Player2Win();
+                            Player2Win(i);
                             break;
                         }
                         else if (!pressedByP2.Contains(winCons[i, j]))
@@ -57,7 +64,7 @@ public class Stats : MonoBehaviour
                     {
                         if (pressedByP1.Contains(winCons[i, j]) && j == 2)
                         {
-                            Player1Win();
+                            Player1Win(i);
                             break;
                         }
                         else if (!pressedByP1.Contains(winCons[i, j]))
@@ -72,15 +79,29 @@ public class Stats : MonoBehaviour
         playerTurn = !playerTurn;
     }
 
-    private void Player1Win()
+    private void Player1Win(int winCon)
     {
-        Debug.Log("Player 1 Wins");
+        Instantiate(WinLines[winCon]);
+        WinP1Text.SetActive(true);
+        Buttons.SetActive(true);
         isPlayable = false;
     }
 
-    private void Player2Win()
+    private void Player2Win(int winCon)
     {
-        Debug.Log("Player 2 Wins");
+        Instantiate(WinLines[winCon]);
+        WinP2Text.SetActive(true);
+        Buttons.SetActive(true);
         isPlayable = false;
+    }
+
+    public void Rematch()
+    {
+        SceneManager.LoadScene("SampleScene");
+    }
+
+    public void Quit()
+    {
+        Application.Quit();
     }
 }
